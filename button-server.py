@@ -26,6 +26,7 @@ def send_touch(self, tile):
 while True:
     for tile, button in buttons.iteritems():
         if button.is_pressed:
+            print("got button press for " + tile)
             send_touch(tile)
 
         # Wait so we dont block everything else.

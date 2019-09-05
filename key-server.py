@@ -23,6 +23,7 @@ device = uinput.Device(keys.values())
 
 class Touch(Resource):
     def post(self, name):
+        print("received touch for " + name)
         device.emit_click(keys[name])
         return "ok", 200
 
