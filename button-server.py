@@ -30,6 +30,14 @@ while True:
         print("got button press for vagrant")
     if buttons["nomad"].is_pressed:
         print("got button press for nomad")
+    if buttons["consul"].is_pressed:
+        print("got button press for consul")
+    if buttons["vault"].is_pressed:
+        print("got button press for vault")
+    if buttons["terraform"].is_pressed:
+        print("got button press for terraform")
+    if buttons["nompackerad"].is_pressed:
+        print("got button press for packer")
         # send_touch(tile)
 
     # Wait so we dont block everything else.
