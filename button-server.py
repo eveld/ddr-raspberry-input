@@ -36,7 +36,7 @@ while True:
         print("got button press for vault")
     if buttons["terraform"].is_pressed:
         print("got button press for terraform")
-    if buttons["nompackerad"].is_pressed:
+    if buttons["packer"].is_pressed:
         print("got button press for packer")
         # send_touch(tile)
 
