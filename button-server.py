@@ -7,12 +7,12 @@ import requests
 from time import sleep
 
 buttons = {
-    "vagrant": Button(23),
-    "packer": Button(24),
-    "terraform": Button(25),
-    "vault": Button(12),
-    "nomad": Button(16),
-    "consul": Button(20)
+    "vagrant": Button(16),
+    "packer": Button(18),
+    "terraform": Button(22),
+    "vault": Button(32),
+    "nomad": Button(36),
+    "consul": Button(38)
 }
 
 WAIT_SLEEP_SECONDS = 0.1
