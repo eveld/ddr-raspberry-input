@@ -90,7 +90,7 @@ class Note(Resource):
         tile = tiles[name]
         for index in range(tile["start"], tile["end"]):
             pixels[index] = (0, 0, 0)
-            print(str(index) + " = " + str((0, 0, 0))
+            print(str(index) + " = " + str((0, 0, 0)))
         pixels.show()
         return "turned off " + name
 
