@@ -18,7 +18,7 @@ buttons = {
 WAIT_SLEEP_SECONDS = 0.1
 KEY_SERVER_ADDRESS = "http://localhost:9090"
 
-def send_touch(self, tile):
+def send_touch(tile):
     url = KEY_SERVER_ADDRESS + "/touch/" + tile
     data = {} 
     r = requests.post(url = url, data = data) 
