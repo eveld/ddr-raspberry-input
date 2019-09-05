@@ -16,8 +16,8 @@ tiles = {
         "start": 0,
         "end": 250,
         "r": 255,
-        "g": 255,
-        "b": 255
+        "g": 0,
+        "b": 0
     },
     "vagrant": {
         "enabled": False,
