@@ -1,6 +1,6 @@
 Install dependencies.
 ```
-sudo pip install python-uinput gpiozero flask flask_restful rpi_ws281x adafruit-circuitpython-neopixel
+sudo pip install python-uinput gpiozero flask flask_restful rpi_ws281x adafruit-circuitpython-neopixel Adafruit-Blinka
 ```
 
 Run in separate windows.
