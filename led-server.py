@@ -5,10 +5,10 @@
 #
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-import board
-import neopixel
+# import board
+# import neopixel
 
-pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
+# pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
 
 tiles = {
     "all": {
@@ -79,18 +79,18 @@ tiles = {
 
 class Note(Resource):
     def post(self, name):
-        for index in range(tiles[name]["start"], tiles[name]["end"]):
+        tile = tiles[name]
+        for index in range(tile["start"], tile["end"]):
             pixels[index] = (tiles[name]["r"], tiles[name]["g"], tiles[name]["b"])
-        
-        tiles[name]["enabled"] = True
+            print(str(index) + " = " + str((tiles[name]["r"], tiles[name]["g"], tiles[name]["b"])))
         pixels.show()
         return "turned on " + name
 
     def delete(self, name):
-        for index in range(tiles[name]["start"], tiles[name]["end"]):
+        tile = tiles[name]
+        for index in range(tile["start"], tile["end"]):
             pixels[index] = (0, 0, 0)
-        
-        tiles[name]["enabled"] = False
+            print(str(index) + " = " + str((0, 0, 0))
         pixels.show()
         return "turned off " + name
 
