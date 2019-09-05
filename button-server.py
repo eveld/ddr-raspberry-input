@@ -24,12 +24,15 @@ def send_touch(self, tile):
     r = requests.post(url = url, data = data) 
 
 while True:
-    for tile, button in buttons.iteritems():
-        if button.is_pressed:
-            print("got button press for " + tile)
-            send_touch(tile)
 
-        # Wait so we dont block everything else.
-        time.sleep(WAIT_SLEEP_SECONDS)
-        
+    # for tile, button in buttons.iteritems():
+    if buttons["vagrant"].is_pressed:
+        print("got button press for vagrant")
+    if buttons["nomad"].is_pressed:
+        print("got button press for nomad")
+        # send_touch(tile)
+
+    # Wait so we dont block everything else.
+    time.sleep(WAIT_SLEEP_SECONDS)
+    
     
