@@ -25,7 +25,7 @@ def send_touch(self, tile):
 
 while True:
 
-    for tile, button in buttons.iteritems():
+    for tile, button in buttons.items():
     # if buttons["vagrant"].is_pressed:
     #     print("got button press for vagrant")
     # if buttons["nomad"].is_pressed:
