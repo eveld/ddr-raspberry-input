@@ -41,7 +41,7 @@ while True:
 
         if button.is_pressed:
             print("got button press for " + tile)
-        # send_touch(tile)
+            send_touch(tile)
 
     # Wait so we dont block everything else.
     sleep(WAIT_SLEEP_SECONDS)
