@@ -7,6 +7,7 @@ import Adafruit_MPR121.MPR121 as MPR121
 import RPi.GPIO as GPIO
 
 import atexit
+import requests
 
 IRQ_PIN = 26
 
