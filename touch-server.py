@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # Listen for touch events and forward them to the key-server over HTTP.
 # Runs on the pi4.

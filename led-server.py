@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # Listen for notes and trigger tiles to light up or dim.
 # Runs on the pi4.

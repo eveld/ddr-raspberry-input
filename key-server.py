@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # Listen for touch events and trigger a key-press on the host.
 # Runs on the laptop.
