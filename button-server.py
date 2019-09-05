@@ -7,12 +7,12 @@ import requests
 from time import sleep
 
 buttons = {
-    "vagrant": Button(16),
-    "packer": Button(18),
-    "terraform": Button(22),
-    "vault": Button(32),
-    "nomad": Button(36),
-    "consul": Button(38)
+    "vagrant": Button(23, pull_up=False),
+    "packer": Button(24, pull_up=False),
+    "terraform": Button(25, pull_up=False),
+    "vault": Button(12, pull_up=False),
+    "nomad": Button(16, pull_up=False),
+    "consul": Button(20, pull_up=False)
 }
 
 WAIT_SLEEP_SECONDS = 0.1
@@ -41,6 +41,6 @@ while True:
         # send_touch(tile)
 
     # Wait so we dont block everything else.
-    time.sleep(WAIT_SLEEP_SECONDS)
+    sleep(WAIT_SLEEP_SECONDS)
     
     
