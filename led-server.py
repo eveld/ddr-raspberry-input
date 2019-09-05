@@ -5,10 +5,10 @@
 #
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
-# import board
-# import neopixel
+import board
+import neopixel
 
-# pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
+pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
 
 tiles = {
     "all": {
