@@ -11,7 +11,31 @@ import neopixel
 pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
 
 tiles = {
-    "all": {
+    "white": {
+        "enabled": False,
+        "start": 0,
+        "end": 250,
+        "r": 255,
+        "g": 255,
+        "b": 255
+    },
+    "blue": {
+        "enabled": False,
+        "start": 0,
+        "end": 250,
+        "r": 0,
+        "g": 0,
+        "b": 255
+    },
+    "green": {
+        "enabled": False,
+        "start": 0,
+        "end": 250,
+        "r": 0,
+        "g": 255,
+        "b": 0
+    },
+    "red": {
         "enabled": False,
         "start": 0,
         "end": 250,
