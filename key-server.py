@@ -20,7 +20,7 @@ keys = {
     "packer": uinput.KEY_D,
     "terraform": uinput.KEY_E,
     "vault": uinput.KEY_Q,
-    "nomad": uinput.KEY_Q,
+    "nomad": uinput.KEY_A,
     "consul": uinput.KEY_W
 }
 
