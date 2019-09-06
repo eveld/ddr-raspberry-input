@@ -29,7 +29,6 @@ def send_touch(tile):
     r = requests.post(url = url, data = data) 
 
 while True:
-
     for tile, button in buttons.items():
         if button.is_pressed:
             print("got button press for " + tile)
