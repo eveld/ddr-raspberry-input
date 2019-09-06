@@ -50,6 +50,15 @@ func main() {
 	// For linux, it is very important wait 2 seconds
 	if runtime.GOOS == "linux" {
 		time.Sleep(2 * time.Second)
+	} else {
+		// force OSX to register update
+		kb.SetKeys(keybd_event.VK_0)
+
+		//launch
+		err = kb.Launching()
+		if err != nil {
+			panic(err)
+		}
 	}
 
 	router := mux.NewRouter()
