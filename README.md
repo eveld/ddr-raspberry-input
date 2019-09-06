@@ -18,3 +18,17 @@ Button server waits for gpio input and then sends a message to the key-server.
 ```
 sudo python3 button-server.py
 ```
+
+```
+   laptop                                      raspberry pi
+
+ key-server |   <--- -XPOST /touch/nomad --- | button-server | <--- press nomad --- [ trigger ]
+   :9090    |                                |               |
+      |     |                                |               |      
+      |     |                                |               |
+     "q"    |                                |               |
+      |     |                                |               |
+      v     |                                |               |
+     game   |   ---- -XPOST /note/nomad ---> |  led-server   | --- turn nomad on ---> [ leds ]
+            |                                |    :9090      |
+```

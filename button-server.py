@@ -1,10 +1,16 @@
 #!/usr/bin/python3
 #
-# Listens for tile presses and converts them to http requests.
+# Listen for tile presses and converts them to http requests.
 #
 from gpiozero import Button
-import requests
 from time import sleep
+
+import argparse
+import requests
+
+parser = argparse.ArgumentParser("Listen for tile presses and converts them to http requests")
+parser.add_argument("-k", "--key-server", action="store", dest="keyserver", help="the address of the keyserver", default="http://localhost:9090")
+args = parser.parse_args()
 
 buttons = {
     "vagrant": Button(23, pull_up=False),
@@ -16,10 +22,9 @@ buttons = {
 }
 
 WAIT_SLEEP_SECONDS = 0.1
-KEY_SERVER_ADDRESS = "http://localhost:9090"
 
 def send_touch(tile):
-    url = KEY_SERVER_ADDRESS + "/touch/" + tile
+    url = args.keyserver + "/touch/" + tile
     data = {} 
     r = requests.post(url = url, data = data) 
 

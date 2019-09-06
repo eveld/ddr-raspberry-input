@@ -5,8 +5,15 @@
 #
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
+
+import argparse
 import board
 import neopixel
+
+parser = argparse.ArgumentParser("Listen for notes and trigger tiles to light up or dim")
+parser.add_argument("-l", "--listen", action="store", dest="listen", help="the address to listen on", default="localhost")
+parser.add_argument("-p", "--port", action="store", dest="port", help="port", default=9090)
+args = parser.parse_args()
 
 pixels = neopixel.NeoPixel(board.D18, 250, brightness=1.0, auto_write=False, pixel_order=neopixel.GRB)
 
@@ -127,20 +134,26 @@ tiles = {
 
 class Note(Resource):
     def post(self, name):
-        tile = tiles[name]
-        for index in range(tile["start"], tile["end"]):
-            pixels[index] = (tiles[name]["r"], tiles[name]["g"], tiles[name]["b"])
-        pixels.show()
-        return "turned on " + name
+        if name in tiles:
+            tile = tiles[name]
+            for index in range(tile["start"], tile["end"]):
+                pixels[index] = (tiles[name]["r"], tiles[name]["g"], tiles[name]["b"])
+            pixels.show()
+            return "turned on " + name
+        else:
+            return "unknown led"
 
     def delete(self, name):
-        tile = tiles[name]
-        for index in range(tile["start"], tile["end"]):
-            pixels[index] = (0, 0, 0)
-        pixels.show()
-        return "turned off " + name
+        if name in tiles:
+            tile = tiles[name]
+            for index in range(tile["start"], tile["end"]):
+                pixels[index] = (0, 0, 0)
+            pixels.show()
+            return "turned off " + name
+        else:
+            return "unknown led"
 
 app = Flask(__name__)
 api = Api(app)
 api.add_resource(Note, "/note/<string:name>")
-app.run(host="0.0.0.0",port=9091,debug=True)
+app.run(host=args.listen,port=args.port,debug=True)
