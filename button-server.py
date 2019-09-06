@@ -26,19 +26,6 @@ def send_touch(tile):
 while True:
 
     for tile, button in buttons.items():
-    # if buttons["vagrant"].is_pressed:
-    #     print("got button press for vagrant")
-    # if buttons["nomad"].is_pressed:
-    #     print("got button press for nomad")
-    # if buttons["consul"].is_pressed:
-    #     print("got button press for consul")
-    # if buttons["vault"].is_pressed:
-    #     print("got button press for vault")
-    # if buttons["terraform"].is_pressed:
-    #     print("got button press for terraform")
-    # if buttons["packer"].is_pressed:
-    #     print("got button press for packer")
-
         if button.is_pressed:
             print("got button press for " + tile)
             send_touch(tile)
