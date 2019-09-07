@@ -32,3 +32,11 @@ sudo python3 button-server.py
      game   |   ---- -XPOST /note/nomad ---> |  led-server   | --- turn nomad on ---> [ leds ]
             |                                |    :9090      |
 ```
+
+# Pins
+Trigger data on GPIO 23,24,25,12,16,20 (see raspberry pi bottom for colors) yellow,black,green - green,red,blue
+Trigger ground on GPIO6
+
+Led data on GPIO18
+Led ground on G14
+
